@@ -1,9 +1,11 @@
+import css from './Filter.module.css'
+import PropTypes from 'prop-types';
 export const Filter = ({ onFilter, filter }) => {
   return (
-    <div>
-      <p>Find Contacts by name</p>
+    <div className={css.filtercontainer}>
+      <p className={css.title}>Find Contacts by name</p>
       <label>
-        <input
+        <input className={css.input}
           type="text"
           name="filter"
           placeholder="Enter name"
@@ -13,4 +15,10 @@ export const Filter = ({ onFilter, filter }) => {
       </label>
     </div>
   );
+};
+
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onFilter: PropTypes.func.isRequired,
 };
